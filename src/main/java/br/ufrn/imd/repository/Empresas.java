@@ -3,6 +3,7 @@ package br.ufrn.imd.repository;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
@@ -12,6 +13,7 @@ import br.ufrn.imd.model.Empresa;
 public class Empresas implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Inject
 	private EntityManager entityManager;
 
 	public Empresas() {
