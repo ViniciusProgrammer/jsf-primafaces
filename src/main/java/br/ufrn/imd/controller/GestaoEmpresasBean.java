@@ -5,18 +5,26 @@ import java.io.Serializable;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
-@Named
+import br.ufrn.imd.model.Empresa;
+import br.ufrn.imd.model.TipoEmpresa;
+
+@Named()
 @ViewScoped
 public class GestaoEmpresasBean implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
-	private static Integer NUMERO = 0;
-	
-	public GestaoEmpresasBean() {
-		NUMERO++;
+
+	private Empresa empresa = new Empresa();
+
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+
+	public TipoEmpresa[] getTiposEmpresas() {
+		return TipoEmpresa.values();
 	}
 	
-	public Integer getNumero() {
-		return NUMERO;
+	public void salvar() {
+		System.out.println("Razão Social " + empresa.getRazaoSocial()
+		+ " Nome Fantasia " + empresa.getNomeFantasia());
 	}
 }
