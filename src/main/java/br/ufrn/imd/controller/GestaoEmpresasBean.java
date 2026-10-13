@@ -18,6 +18,10 @@ public class GestaoEmpresasBean implements Serializable {
 	public Empresa getEmpresa() {
 		return empresa;
 	}
+	
+	public String ajuda() {
+		return "AjudaGestaoEmpresas?faces-redirect=true";
+	}
 
 	public TipoEmpresa[] getTiposEmpresas() {
 		return TipoEmpresa.values();
