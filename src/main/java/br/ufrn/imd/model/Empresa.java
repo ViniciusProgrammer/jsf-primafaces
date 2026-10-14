@@ -1,6 +1,7 @@
 package br.ufrn.imd.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Objects;
 
@@ -48,6 +49,17 @@ public class Empresa implements Serializable {
 	@Column(nullable = false, length = 30)
 	private TipoEmpresa tipo;
 
+	@Column(precision = 10, scale = 2)
+	private BigDecimal faturamento;
+	
+	public BigDecimal getFaturamento() {
+		return faturamento;
+	}
+	
+	public void setFaturamento(BigDecimal faturamento) {
+		this.faturamento = faturamento;
+	}
+	
 	public Long getId() {
 		return id;
 	}
